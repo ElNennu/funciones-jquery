@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="jquery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#addclass").click(function () {
+          $(".addRemoveClass p").addClass("red");
+        });
+        $("#removeclass").click(function () {
+          $(".addRemoveClass p").removeClass("red");
+        });
+        $("#slidetoggle").click(function () {
+          $(".slide  h1").slideToggle();
+        });
+        $("#slidedown").click(function () {
+          $(".slide  h1").slideDown();
+        });
+        $("#slideup").click(function () {
+          $(".slide  h1").slideUp();
+        });
+        $(".append button").click(function () {
+          $(".append").append("<p>nuevo parrafo</p>");
+        });
+        $("#hide").click(function () {
+          $(".hideshow h1").hide();
+        });
+        $("#show").click(function () {
+          $(".hideshow h1").show();
+        });
+        $("#toggle").click(function () {
+          $(".hideshow h1").toggle();
+        });
+        $("#before").click(function () {
+          $(".beforeafter .corte").before($(".beforeafter  h1"));
+        });
+        $("#after").click(function () {
+          $(".beforeafter .corte").after($(".beforeafter h1"));
+        });
+        $("#fadein").click(function () {
+          $(".fader h1").fadeIn();
+        });
+        $("#fadeout").click(function () {
+          $(".fader h1").fadeOut();
+        });
+        $("#htmlChange").click(function () {
+          $(".other p").html("<span class='red'>insetando HTML span</span>");
+        });
+        $("#insertText").click(function () {
+          $(".other p").text("Otro texto");
+        });
+        $("#attributes").click(function () {
+          var attr = $(".other").attr("class");
+          $(".other p").text("Clases de la divion: '" + attr + "'");
+        });
+        function displayVals() {
+          var singleValues = $("#values").val();
+          $(".other p").html("<b>Value:</b> " + singleValues);
+        }
+        $(".other select").change(displayVals);
+        displayVals();
+      });
+    </script>
+    <title>Jquery</title>
+  </head>
+  <body>
+    <div class="division addRemoveClass">
+      <h1>Add / Remove Class</h1>
+      <div class="addclass">
+        <button id="addclass">Add Class</button>
+        <button id="removeclass">Remove Class</button>
+        <p>Click the button to add class 'red' to this paragraph</p>
+      </div>
+    </div>
+    <div class="division slide">
+      <h1>Slide</h1>
+      <div class="">
+        <button id="slidetoggle">SlideToggle</button>
+        <button id="slidedown">SlideDown</button>
+        <button id="slideup">SlideUp</button>
+        <p>Click the button to slide this tittle</p>
+      </div>
+    </div>
+    <div class="division">
+      <h1>Append</h1>
+      <div class="append">
+        <button>Append</button>
+        <p>Click the button to append a new paragraph</p>
+      </div>
+    </div>
+    <div class="division hideshow">
+      <h1>Hide Show</h1>
+      <div>
+        <button id="hide">hide</button>
+        <button id="show">Show</button>
+        <button id="toggle">Toggle</button>
+        <p>Click the button to hide, Show or toggle tittle</p>
+      </div>
+    </div>
+    <div class="division beforeafter">
+      <h1>Before / After</h1>
+      <div class="corte">
+        <button id="before">before</button>
+        <button id="after">after</button>
+        <p>Click the button to move before or after tittle in division</p>
+      </div>
+    </div>
+    <div class="division fader">
+      <h1>FadeIn / FadeOut</h1>
+      <div class="">
+        <button id="fadein">FadeIn</button>
+        <button id="fadeout">Fadeout</button>
+        <p>Click the button to fadein or fadeout tittle in division</p>
+      </div>
+    </div>
+    <div class="division other">
+      <h1>Others</h1>
+      <div class="">
+        <button id="htmlChange">HTML Change</button>
+        <button id="insertText">insert Text</button>
+        <button id="attributes">Obtain Attributes</button>
+        <select id="values">
+          <option>VALOR 1</option>
+          <option>VALOR 2</option>
+        </select>
+        <p>Click the button to execute in division</p>
+      </div>
+    </div>
+  </body>
+</html>
